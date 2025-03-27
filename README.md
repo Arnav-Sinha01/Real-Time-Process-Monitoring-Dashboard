@@ -51,9 +51,6 @@ realtime-process-monitor/
 - Click on a process to select it.
 - Press the **Kill Process** button to terminate it.  
 
-## 🖼️ Screenshots
-*(Include relevant screenshots of the application UI here.)*
-
 ## 🤝 Contributing
 Contributions are welcome! If you find a bug or have an enhancement idea:
 1. **Fork** the repository.
