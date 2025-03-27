@@ -9,7 +9,7 @@ def get_system_stats():
 def get_process_list(search_text=""):
     processes = [(p.info["pid"], p.info["name"], round(p.info["cpu_percent"], 2), round(p.info["memory_percent"], 2)) 
                  for p in psutil.process_iter(["pid", "name", "cpu_percent", "memory_percent"])]
-    processes.sort(key=lambda x: x[2], reverse=True)
+    
     if search_text:
         processes = [p for p in processes if search_text in p[1].lower()]
     return processes
