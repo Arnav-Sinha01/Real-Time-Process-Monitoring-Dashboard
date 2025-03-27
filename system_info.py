@@ -28,14 +28,4 @@ def get_process_list(search_text=""):
     return list(sorted_processes)  # Convert to list only at the end
 
 
-def terminate_process(pid):
-    try:
-        process = psutil.Process(pid)
-        process.terminate()
-        return True, f"Process {pid} terminated successfully."
-    except psutil.NoSuchProcess:
-        return False, f"Process {pid} does not exist."
-    except psutil.AccessDenied:
-        return False, f"Permission denied to terminate process {pid}."
-    except Exception as e:
-        return False, f"Failed to terminate process {pid}: {str(e)}"
+
