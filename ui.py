@@ -17,9 +17,7 @@ class SystemMonitor(QWidget):
         self.setWindowTitle("System Monitor")
         self.setGeometry(100, 100, 1300, 750)
 
-        main_layout = QVBoxLayout()
-        usage_layout = self.create_usage_section()
-        middle_layout = self.create_middle_section()
+        
 
         main_layout.addLayout(usage_layout)
         main_layout.addLayout(middle_layout)
