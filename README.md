@@ -61,10 +61,5 @@ Contributions are welcome! If you find a bug or have an enhancement idea:
 ## 📜 License
 This project is licensed under the **Apache License**. See the `LICENSE` file for details.
 
-## 📬 Contact
-For any questions or suggestions, feel free to reach out:
-📧 **Email**: your.email@example.com  
-🐙 **GitHub**: [yourusername](https://github.com/yourusername)  
-
 🚀 Happy Monitoring! 🎯
 
