@@ -11,15 +11,14 @@ def main():
             color: #e0e0e0;
             font-size: 14px;
         }
-        QPushButton {
-            background-color: #3daee9;
-            border: 1px solid #333;
-            color: white;
-            padding: 6px;
-            border-radius: 4px;
-        }
+        
         QPushButton:hover {
             background-color: #2a8cbd;
+        }
+        QLineEdit {
+            border: 1px solid #666;
+            background-color: #1e1e1e;
+            color: white;
         }
     """)
     window = SystemMonitor()
