@@ -21,11 +21,6 @@ def main():
         QPushButton:hover {
             background-color: #2a8cbd;
         }
-        QLineEdit {
-            border: 1px solid #666;
-            background-color: #1e1e1e;
-            color: white;
-        }
     """)
     window = SystemMonitor()
     window.show()
