@@ -122,6 +122,7 @@ class SystemMonitor(QWidget):
         search_text = self.search_input.text().lower()
         processes = get_process_list(search_text)
 
+        self.process_table.setRowCount(len(processes))
         for row, process in enumerate(processes):
             for col, value in enumerate(process):
                 self.process_table.setItem(row, col, QTableWidgetItem(str(value)))

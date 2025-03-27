@@ -3,8 +3,7 @@ import psutil
 
 def get_system_stats():
     cpu_usage = round(psutil.cpu_percent(), 2)
-    memory_usage = round(psutil.virtual_memory().percent, 2)
-    disk_usage = round(psutil.disk_usage('/').percent, 2)
+    
     return cpu_usage, memory_usage, disk_usage
 
 
