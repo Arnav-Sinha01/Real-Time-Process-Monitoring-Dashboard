@@ -87,7 +87,9 @@ class SystemMonitor(QWidget):
         self.process_table.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeMode.Stretch)
         layout.addWidget(self.process_table)
 
-        
+        self.kill_button = QPushButton("Kill Process")
+        self.kill_button.clicked.connect(self.killProcess)
+        layout.addWidget(self.kill_button)
 
         return layout
 
