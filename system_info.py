@@ -18,9 +18,9 @@ def get_process_list(search_text=""):
 
 
 def terminate_process(pid):
-    
+    try:
         process = psutil.Process(pid)
         process.terminate()
         return True, f"Process {pid} terminated successfully."
-    
+    except Exception as e:
         return False, f"Failed to terminate process {pid}: {str(e)}"
