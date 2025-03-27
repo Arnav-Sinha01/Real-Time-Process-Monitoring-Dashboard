@@ -1,10 +1,9 @@
 # main.py
 import sys
 from PyQt6.QtWidgets import QApplication
-from ui import SystemMonitor
+from ui import SystemMonitors
 
 def main():
-    app = QApplication(sys.argv)
     app.setStyleSheet("""
         QWidget {
             background-color: #121212;
