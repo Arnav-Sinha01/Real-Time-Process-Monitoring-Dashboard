@@ -66,7 +66,10 @@ class SystemMonitor(QWidget):
         self.time_data = list(range(30))
         self.cpu_curve, self.memory_curve, self.disk_curve = self.cpu_plot.plot(self.time_data, self.cpu_data, pen='r'), self.memory_plot.plot(self.time_data, self.memory_data, pen='g'), self.disk_plot.plot(self.time_data, self.disk_data, pen='b')
 
-        
+        for plot in [self.cpu_plot, self.memory_plot, self.disk_plot]:
+            plot.showGrid(x=True, y=True)
+            plot.setBackground("black")
+            layout.addWidget(plot)
         
         return layout
 
