@@ -30,7 +30,7 @@ def export_process_history(parent):
     default_filename = f"process_history_{timestamp}.csv"
     
     # Ask user for file location
-    options = QFileDialog.Options()
+    options = QFileDialog.Option(0)
     file_path, _ = QFileDialog.getSaveFileName(
         parent, "Export Process History", default_filename, 
         "CSV Files (*.csv)", options=options
@@ -100,7 +100,7 @@ def export_process_data(parent, process_table):
     file_filters = "All Files (*.*);;" + file_filters
     
     # Ask user for file type and location
-    options = QFileDialog.Options()
+    options = QFileDialog.Option(0)
     file_path, selected_filter = QFileDialog.getSaveFileName(
         parent, "Export Process Data", default_filename, 
         file_filters, options=options
