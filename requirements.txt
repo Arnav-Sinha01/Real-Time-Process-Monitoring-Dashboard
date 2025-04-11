@@ -2,4 +2,7 @@
 psutil
 pyqt6
 pyqtgraph
+# Optional dependencies for Excel export
+pandas
+openpyxl
 

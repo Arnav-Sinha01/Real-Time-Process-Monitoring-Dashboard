@@ -87,9 +87,19 @@ class SystemMonitor(QWidget):
         self.process_table.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeMode.Stretch)
         layout.addWidget(self.process_table)
 
+        # Create button layout for process controls
+        button_layout = QHBoxLayout()
+        
         self.kill_button = QPushButton("Kill Process")
         self.kill_button.clicked.connect(self.killProcess)
-        layout.addWidget(self.kill_button)
+        button_layout.addWidget(self.kill_button)
+        
+        # Add export button
+        self.export_button = QPushButton("Export Data")
+        self.export_button.clicked.connect(self.exportProcessData)
+        button_layout.addWidget(self.export_button)
+        
+        layout.addLayout(button_layout)
 
         return layout
 
@@ -119,8 +129,12 @@ class SystemMonitor(QWidget):
 
     def updateProcesses(self):
         from system_info import get_process_list
+        from process_history import add_process_snapshot
         search_text = self.search_input.text().lower()
         processes = get_process_list(search_text)
+
+        # Add current processes to history
+        add_process_snapshot(processes)
 
         self.process_table.setRowCount(len(processes))
         for row, process in enumerate(processes):
@@ -137,3 +151,10 @@ class SystemMonitor(QWidget):
             self.updateProcesses()
         else:
             QMessageBox.warning(self, "Selection Error", "Please select a process to kill.")
+    
+    def exportProcessData(self):
+        """Export the process history data to CSV file"""
+        from export_utils import export_process_history, export_process_data
+        # Export both current process table data and historical data
+        export_process_data(self, self.process_table)
+        export_process_history(self)
